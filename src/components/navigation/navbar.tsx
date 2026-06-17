@@ -2,14 +2,28 @@ import { NavigationData } from "@/src/core/constants";
 
 import { Button } from "@/src/components/ui/button";
 
-import { Link } from "react-router";
+import { Link, useLocation } from "react-router";
+
+import { cn } from "@/src/lib/utils";
 
 function Navbar() {
+    const location = useLocation();
     return (
         <ul className="flex flex-row justify-center items-center gap-x-3">
             {NavigationData.map((item) => (
                 <li key={item.id}>
-                    <Button variant="link" className="text-sm" asChild>
+                    <Button
+                        variant="link"
+                        className={cn(
+                            "text-sm",
+                            location.pathname === item.href
+                            ?
+                            "underline"
+                            :
+                            "no-underline"
+                        )}
+                        asChild
+                    >
                         <Link to={item.href}>
                             {item.title}
                         </Link>

@@ -12,9 +12,12 @@ import { ListIcon } from "@phosphor-icons/react";
 
 import { NavigationData } from "@/src/core/constants";
 
-import { Link } from "react-router";
+import { cn } from "@/src/lib/utils";
+
+import { Link, useLocation } from "react-router";
 
 function NavbarPhone() {
+    const location = useLocation();
     return (
         <Sheet>
             <SheetTrigger asChild>
@@ -31,7 +34,18 @@ function NavbarPhone() {
                 <ul className="flex flex-col justify-center items-center gap-y-3">
                     {NavigationData.map((item) => (
                         <li key={item.id}>
-                            <Button variant="link" asChild>
+                            <Button
+                                variant="link"
+                                asChild
+                                className={cn(
+                                    "text-sm",
+                                    location.pathname === item.href
+                                    ?
+                                    "underline"
+                                    :
+                                    "no-underline"
+                                )}
+                            >
                                 <Link to={item.href}>
                                     {item.title}
                                 </Link>
