@@ -46,7 +46,7 @@ function NavbarPhone() {
                                     "no-underline"
                                 )}
                             >
-                                <Link to={item.href}>
+                                <Link reloadDocument to={item.href}>
                                     {item.title}
                                 </Link>
                             </Button>
