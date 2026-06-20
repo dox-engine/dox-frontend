@@ -1,6 +1,7 @@
 import { createBrowserRouter } from "react-router";
 
 import MainPage from "@/src/pages/main";
+import BooksPage from "@/src/pages/books";
 import AboutPage from "@/src/pages/about";
 
 import ErrorLayout from "@/src/layout/error";
@@ -20,7 +21,19 @@ const router = createBrowserRouter([
         ],
     },
     {
+        path: "books",
+        ErrorBoundary: ErrorLayout,
+        lazy: () => MainLayout,
+        children: [
+            {
+                index: true,
+                Component: BooksPage
+            }
+        ],
+    },
+    {
         path: "about",
+        ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
         children: [
             {

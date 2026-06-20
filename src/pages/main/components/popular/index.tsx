@@ -1,7 +1,3 @@
-function Popular() {
-    return (
-        
-    );
-};
+function Popular() {};
 
 export default Popular;

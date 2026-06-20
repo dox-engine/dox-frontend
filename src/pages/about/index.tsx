@@ -11,6 +11,9 @@ function AboutPage() {
                 DOX-ENGINE is a shadow library built to provide free and unrestricted access to scientific knowledge. <br />
                 We belive that knowledge should be accessible to everyone.
             </p>
+            <div className="bg-card border border-border px-4 py-3 rounded-full text-xs">
+                app version: 0.0.1-alpha-0.1
+            </div>
             <div className="w-full hidden md:block">
                 <AboutContent />
             </div>
