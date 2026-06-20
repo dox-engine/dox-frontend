@@ -10,7 +10,7 @@ import { Button } from "@/src/components/ui/button";
 
 import { ListIcon } from "@phosphor-icons/react";
 
-import { NavigationData } from "@/src/core/constants";
+import { NavigationData } from "@/src/core/constants/navigation";
 
 import { cn } from "@/src/lib/utils";
 

@@ -1,4 +1,4 @@
-import { NavigationData } from "@/src/core/constants";
+import { NavigationData } from "@/src/core/constants/navigation";
 
 import { Button } from "@/src/components/ui/button";
 
