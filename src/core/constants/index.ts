@@ -13,8 +13,8 @@ const NavigationData: NavigationDataType = [
     },
     {
         id: 3,
-        title: "Search",
-        href: "/search"
+        title: "Papers",
+        href: "/papers"
     },
     {
         id: 4,

@@ -32,7 +32,7 @@ function HexagonBackground({
   });
 
   const updateGridDimensions = React.useCallback(() => {
-    const rows = Math.ceil(window.innerHeight / rowSpacing);
+    const rows = Math.ceil((window.innerHeight * 5) / rowSpacing);
     const columns = Math.ceil(window.innerWidth / hexagonWidth) + 1;
     setGridDimensions({ rows, columns });
   }, [rowSpacing, hexagonWidth]);
