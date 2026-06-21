@@ -1,6 +1,7 @@
-import { cn } from "@/src/lib/utils";
-
 import * as React from "react";
+
+// Importing cn function(tailwindcss utility) from core
+import { cn } from "@/src/core/lib/utils";
 
 function AboutCard({
     children,

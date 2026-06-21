@@ -7,7 +7,7 @@ import {
   useIsInView,
   type UseIsInViewOptions,
 } from '@/src/core/hooks/use-is-in-view';
-import { getStrictContext } from '@/src/lib/get-strict-context';
+import { getStrictContext } from '@/src/core/lib/get-strict-context';
 
 type TypingTextContextType = {
   isTyping: boolean;

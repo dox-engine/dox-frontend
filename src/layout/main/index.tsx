@@ -1,11 +1,18 @@
-import { HexagonBackground } from "@/src/components/animate-ui/components/backgrounds/hexagon";
-import Footer from "@/src/components/footer";
-import Loading from "@/src/components/loading";
-
-import Navigation from "@/src/components/navigation";
 import { useEffect, useState } from "react";
 
 import { Outlet } from "react-router";
+
+// Importing footer component
+import Footer from "@/src/components/footer";
+
+// mounting ui component
+import Loading from "@/src/components/loading";
+
+// Importing navigation
+import Navigation from "@/src/components/navigation";
+
+// Default background
+import { HexagonBackground } from "@/src/components/animate-ui/components/backgrounds/hexagon";
 
 function Component() {
     const [loading, setLoading] = useState<boolean>(true);

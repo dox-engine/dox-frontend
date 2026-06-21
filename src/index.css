@@ -5,6 +5,10 @@
 
 @custom-variant dark (&:is(.dark *));
 
+/*
+    Creating variables
+*/
+
 @theme inline {
     --font-heading: var(--font-mono);
     --font-mono: 'JetBrains Mono Variable', monospace;

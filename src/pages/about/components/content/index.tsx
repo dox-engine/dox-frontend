@@ -1,5 +1,6 @@
 import { AvatarImage, Avatar, AvatarFallback } from "@/src/components/ui/avatar";
 import { Badge } from "@/src/components/ui/badge";
+
 import AboutCard from "@/src/pages/about/components/About-Card";
 
 import {

@@ -1,3 +1,4 @@
+// Importing global ui components
 import { Select, SelectContent, SelectGroup, SelectItem, SelectLabel, SelectTrigger, SelectValue } from "@/src/components/ui/select";
 
 function BooksFilterCategories() {

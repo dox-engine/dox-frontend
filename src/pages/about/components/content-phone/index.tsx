@@ -1,9 +1,4 @@
-import {
-    Accordion,
-    AccordionContent,
-    AccordionItem,
-    AccordionTrigger,
-} from "@/src/components/ui/accordion";
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/src/components/ui/accordion";
 import { Badge } from "@/src/components/ui/badge";
 import { AvatarImage, Avatar, AvatarFallback } from "@/src/components/ui/avatar";
 

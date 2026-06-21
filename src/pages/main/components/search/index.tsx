@@ -1,11 +1,18 @@
+// Global ui animate-ui components
 import { CountingNumber } from "@/src/components/animate-ui/primitives/texts/counting-number";
+
+// Global ui shadcn components
 import { Button } from "@/src/components/ui/button";
 import { ButtonGroup } from "@/src/components/ui/button-group";
 import { Input } from "@/src/components/ui/input";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/src/components/ui/tooltip";
 
+// Icons from phosphor icons
 import { MagnifyingGlassIcon, CheckCircleIcon } from "@phosphor-icons/react";
 
+// Main search page
+// By searching in this input, and enter user will be redirected
+// To books page with specific items that are found in that page
 function MainSearch() {
     return (
         <div className="max-w-lg lg:max-w-2xl bg-card w-full py-3 px-4 flex flex-col justify-center rounded-[8px] items-center gap-y-4">

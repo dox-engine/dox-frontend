@@ -10,9 +10,10 @@ import { ForbiddenPageMetaData } from "@/src/core/constants/metadata";
 // Importing link from react router for navigation in pages
 import { Link } from "react-router";
 
+// Icon component from phosphor icons
 import { HouseIcon } from "@phosphor-icons/react";
 
-// Not found page for using in error boundry
+// Forbidden page for using in error boundry
 function ForbiddenPage() {
     return (
         <>

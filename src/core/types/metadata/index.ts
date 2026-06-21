@@ -6,7 +6,11 @@
 // for each page and making each page title dynamic
 enum PAGE_TITLES {
     HOME = "main page | DOX-ENGINE",
+    BOOKS = "books page | DOX-ENGINE",
+    ABOUT = "about us page | DOX-ENGINE",
     NOT_FOUND = "Not found ! | DOX-ENGINE",
+    FORBIDDEN = "Forbidden ! | DOX-ENGINE",
+    INTERNAL = "internal error ! | DOX-ENGINE",
 };
 
 // Page metadata is where we define all of our metadata

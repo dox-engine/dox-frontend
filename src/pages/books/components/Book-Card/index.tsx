@@ -1,8 +1,15 @@
+// Importing hooks from react root
+import { useState } from "react";
+
+// Importing global ui components
 import { Badge } from "@/src/components/ui/badge";
 import { Button } from "@/src/components/ui/button";
 import { Card, CardDescription, CardFooter, CardHeader, CardTitle } from "@/src/components/ui/card";
-import { useState } from "react";
+
+// Importing fallback image when actual image from server are not served
 import IMAGE_FALLBACK from "@/src/assets/images/fallback/fallback.jpg";
+
+// Importing icons from phosphor icons
 import { BookIcon } from "@phosphor-icons/react";
 
 function BooksCard() {

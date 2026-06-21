@@ -3,10 +3,14 @@ import { isRouteErrorResponse, useRouteError } from "react-router";
 
 // Importing custom error pages
 import NotFoundPage from "@/src/pages/error/notFound";
-import { HexagonBackground } from "@/src/components/animate-ui/components/backgrounds/hexagon";
-import Navigation from "@/src/components/navigation";
 import ForbiddenPage from "@/src/pages/error/forbidden";
 import InternalPage from "@/src/pages/error/internal";
+
+// Importing navigation
+import Navigation from "@/src/components/navigation";
+
+// Default background
+import { HexagonBackground } from "@/src/components/animate-ui/components/backgrounds/hexagon";
 
 // This function or component is for customizing error ui
 function RootErrorLayout() {

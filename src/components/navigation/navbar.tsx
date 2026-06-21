@@ -4,7 +4,7 @@ import { Button } from "@/src/components/ui/button";
 
 import { Link, useLocation } from "react-router";
 
-import { cn } from "@/src/lib/utils";
+import { cn } from "@/src/core/lib/utils";
 
 function Navbar() {
     const location = useLocation();

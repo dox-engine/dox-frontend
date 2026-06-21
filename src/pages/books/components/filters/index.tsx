@@ -1,9 +1,13 @@
+// Importing global ui components
 import { Button } from "@/src/components/ui/button";
 import { ButtonGroup } from "@/src/components/ui/button-group";
 import { Input } from "@/src/components/ui/input";
 import { TooltipContent, TooltipTrigger, Tooltip } from "@/src/components/ui/tooltip";
+
+// Importing icons from phsophor icons
 import { MagnifyingGlassIcon } from "@phosphor-icons/react";
 
+// Importing local ui components
 import BooksFilterTypes from "@/src/pages/books/components/filters/types";
 import BooksFilterCategories from "@/src/pages/books/components/filters/categories";
 import BooksFilterOrder from "@/src/pages/books/components/filters/order";

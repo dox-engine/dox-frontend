@@ -1,7 +1,8 @@
+// Importing component from animate-ui
 import { CountingNumber } from "@/src/components/animate-ui/primitives/texts/counting-number";
-import {
-    BookOpenIcon,
-} from "@phosphor-icons/react";
+
+// Importing book icon from phosphor icons
+import { BookOpenIcon } from "@phosphor-icons/react";
 
 function BooksCount() {
     return (

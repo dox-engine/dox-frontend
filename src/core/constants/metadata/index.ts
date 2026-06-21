@@ -12,6 +12,28 @@ const HomePageMetaData: PageMetaData = {
     ],
 };
 
+// Books Page specific matadata
+const BooksPageMetaData: PageMetaData = {
+    title: PAGE_TITLES.BOOKS,
+    description: "Wellcome to the books page",
+    keywords: [
+        "books",
+        "papres",
+        "scientific"
+    ],
+};
+
+// About us Page specific matadata
+const AboutPageMetaData: PageMetaData = {
+    title: PAGE_TITLES.BOOKS,
+    description: "Wellcome to the about us page",
+    keywords: [
+        "books",
+        "papres",
+        "scientific"
+    ],
+};
+
 // Error pages metadata
 const NotFoundPageMetaData: PageMetaData = {
     title: PAGE_TITLES.NOT_FOUND,
@@ -24,7 +46,7 @@ const NotFoundPageMetaData: PageMetaData = {
 };
 
 const ForbiddenPageMetaData: PageMetaData = {
-    title: PAGE_TITLES.NOT_FOUND,
+    title: PAGE_TITLES.FORBIDDEN,
     description: "We are sorry, this page is not available at this moment",
     keywords: [
         "books",
@@ -34,7 +56,7 @@ const ForbiddenPageMetaData: PageMetaData = {
 };
 
 const InternalPageMetaData: PageMetaData = {
-    title: PAGE_TITLES.NOT_FOUND,
+    title: PAGE_TITLES.INTERNAL,
     description: "We are sorry, this page is not available at this moment",
     keywords: [
         "books",
@@ -45,6 +67,8 @@ const InternalPageMetaData: PageMetaData = {
 
 export {
     HomePageMetaData,
+    BooksPageMetaData,
+    AboutPageMetaData,
     NotFoundPageMetaData,
     ForbiddenPageMetaData,
     InternalPageMetaData

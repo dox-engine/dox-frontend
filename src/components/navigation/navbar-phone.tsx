@@ -12,7 +12,7 @@ import { ListIcon } from "@phosphor-icons/react";
 
 import { NavigationData } from "@/src/core/constants/navigation";
 
-import { cn } from "@/src/lib/utils";
+import { cn } from "@/src/core/lib/utils";
 
 import { Link, useLocation } from "react-router";
 

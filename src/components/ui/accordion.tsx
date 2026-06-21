@@ -1,7 +1,7 @@
 import * as React from "react"
 import { Accordion as AccordionPrimitive } from "radix-ui"
 
-import { cn } from "@/src/lib/utils"
+import { cn } from "@/src/core/lib/utils"
 import { CaretDownIcon, CaretUpIcon } from "@phosphor-icons/react"
 
 function Accordion({

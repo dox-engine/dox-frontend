@@ -1,3 +1,4 @@
+// Importing global ui components
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from "@/src/components/ui/pagination";
 
 function BooksPagination() {

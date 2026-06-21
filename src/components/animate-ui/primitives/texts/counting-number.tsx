@@ -6,7 +6,7 @@ import { useMotionValue, useSpring, type SpringOptions } from 'motion/react';
 import {
   useIsInView,
   type UseIsInViewOptions,
-} from '@/src/hooks/use-is-in-view';
+} from '@/src/core/hooks/use-is-in-view';
 
 type CountingNumberProps = Omit<React.ComponentProps<'span'>, 'children'> & {
   number: number;
