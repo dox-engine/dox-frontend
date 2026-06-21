@@ -23,9 +23,20 @@ const BooksPageMetaData: PageMetaData = {
     ],
 };
 
+// Papers Page specific matadata
+const PapersPageMetaData: PageMetaData = {
+    title: PAGE_TITLES.PAPERS,
+    description: "Wellcome to the papers page",
+    keywords: [
+        "books",
+        "papres",
+        "scientific"
+    ],
+};
+
 // About us Page specific matadata
 const AboutPageMetaData: PageMetaData = {
-    title: PAGE_TITLES.BOOKS,
+    title: PAGE_TITLES.ABOUT,
     description: "Wellcome to the about us page",
     keywords: [
         "books",
@@ -68,6 +79,7 @@ const InternalPageMetaData: PageMetaData = {
 export {
     HomePageMetaData,
     BooksPageMetaData,
+    PapersPageMetaData,
     AboutPageMetaData,
     NotFoundPageMetaData,
     ForbiddenPageMetaData,

@@ -5,6 +5,7 @@ import { createBrowserRouter } from "react-router";
 // Front Pages(Landing, books, etc...)
 import MainPage from "@/src/pages/main";
 import BooksPage from "@/src/pages/books";
+import PapersPage from "@/src/pages/papers";
 import AboutPage from "@/src/pages/about";
 
 // PendingUi for fallBack Elements
@@ -44,6 +45,18 @@ const router = createBrowserRouter([
             {
                 index: true,
                 Component: BooksPage
+            }
+        ],
+    },
+    {
+        path: "papers",
+        HydrateFallback: Hydration,
+        ErrorBoundary: ErrorLayout,
+        lazy: () => MainLayout,
+        children: [
+            {
+                index: true,
+                Component: PapersPage
             }
         ],
     },
