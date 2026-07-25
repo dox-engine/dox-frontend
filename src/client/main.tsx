@@ -1,0 +1,40 @@
+// Default utilities and react components
+import { StrictMode, Suspense } from "react";
+import { createRoot } from "react-dom/client";
+
+// Importing RouterProvider for initiating router object
+// And importing router object for using in RouterProvider
+import { RouterProvider } from "react-router";
+
+// Using helmet becuase this library gives us the ability
+// Of changing route-level meta data so we could have control
+// Over our pages meta data
+import { HelmetProvider } from "react-helmet-async";
+
+// Theme provider of switching between theme contexts
+import { ThemeProvider } from "@/client/core/providers/theme-provider";
+
+// Tooltip provider for tooltip component
+import { TooltipProvider } from "@/client/components/ui/tooltip";
+
+// Router object which contains routes and layouts
+import { router } from "@/client/router/index";
+
+// Styles are in this file
+import "@/client/index.css";
+
+import Loading from "@/client/components/loading";
+
+createRoot(document.getElementById("root")!).render(
+    <StrictMode>
+        <HelmetProvider>
+            <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+                <Suspense fallback={<Loading />}>
+                    <TooltipProvider>
+                        <RouterProvider router={router} />
+                    </TooltipProvider>
+                </Suspense>
+            </ThemeProvider>
+        </HelmetProvider>
+    </StrictMode>,
+);
