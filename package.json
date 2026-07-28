@@ -6,7 +6,10 @@
     "scripts": {
         "dev": "nodemon -w src/server -x tsx src/server/main.ts",
         "start": "tsx src/server/main.ts",
-        "build": "vite build"
+        "build": "vite build",
+        "knip": "knip",
+        "test:run": "vitest run",
+        "test:watch": "vitest watch"
     },
     "dependencies": {
         "@fontsource-variable/geist": "^5.3.0",
@@ -45,10 +48,12 @@
         "@types/react-dom": "^19.2.3",
         "@vitejs/plugin-react": "^6.0.3",
         "babel-plugin-react-compiler": "^1.0.0",
+        "knip": "^6.29.0",
         "nodemon": "^3.1.14",
         "oxlint": "^1.71.0",
         "typescript": "~6.0.2",
-        "vite": "^8.1.1"
+        "vite": "^8.1.1",
+        "vitest": "^4.1.10"
     },
     "allowScripts": {
         "esbuild@0.28.1": true

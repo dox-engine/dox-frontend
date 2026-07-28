@@ -4,7 +4,7 @@ import ContactContent from "@/client/pages/contact/contact-info";
 
 import { ContactPageMetaData } from "@/client/core/constants/metadata";
 
-function ContactPage() {
+function Component() {
     return (
         <>
             <Helmet>
@@ -27,4 +27,4 @@ function ContactPage() {
     );
 };
 
-export default ContactPage;
+export { Component };

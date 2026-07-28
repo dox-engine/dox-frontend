@@ -9,7 +9,7 @@ import BooksPagination from "@/client/pages/books/components/pagination";
 import { BooksPageMetaData } from "@/client/core/constants/metadata";
 
 // Books page component
-function BooksPage() {
+function Component() {
     return (
         <>
             <Helmet>
@@ -40,4 +40,4 @@ function BooksPage() {
     );
 };
 
-export default BooksPage;
+export { Component };

@@ -9,7 +9,7 @@ import PapersPagination from "@/client/pages/papers/components/pagination";
 import { PapersPageMetaData } from "@/client/core/constants/metadata";
 
 // Papers page component
-function PapersPage() {
+function Component() {
     return (
         <>
             <Helmet>
@@ -40,4 +40,4 @@ function PapersPage() {
     );
 };
 
-export default PapersPage;
+export { Component };

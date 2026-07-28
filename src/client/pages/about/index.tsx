@@ -6,7 +6,7 @@ import AboutContentPhone from "@/client/pages/about/components/content-phone";
 
 import { AboutPageMetaData } from "@/client/core/constants/metadata";
 
-function AboutPage() {
+function Component() {
     return (
         <>
             <Helmet>
@@ -38,4 +38,4 @@ function AboutPage() {
     );
 };
 
-export default AboutPage;
+export { Component };

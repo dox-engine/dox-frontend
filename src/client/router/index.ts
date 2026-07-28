@@ -3,16 +3,22 @@
 import { createBrowserRouter } from "react-router";
 
 // Front Pages(Landing, books, etc...)
-import MainPage from "@/client/pages/main";
-import BooksPage from "@/client/pages/books";
-import PapersPage from "@/client/pages/papers";
-import AboutPage from "@/client/pages/about";
-import ContactPage from "@/client/pages/contact";
+// import MainPage from "@/client/pages/main";
+// import BooksPage from "@/client/pages/books";
+// import PapersPage from "@/client/pages/papers";
+// import AboutPage from "@/client/pages/about";
+// import ContactPage from "@/client/pages/contact";
 
-import ForbiddenPage from "@/client/pages/error/forbidden";
+// import ForbiddenPage from "@/client/pages/error/forbidden";
 
 // PendingUi for fallBack Elements
 import Hydration from "@/client/components/Hydration";
+
+const MainPage = import("@/client/pages/main");
+const BooksPage = import("@/client/pages/books");
+const PapersPage = import("@/client/pages/papers");
+const AboutPage = import("@/client/pages/about");
+const ContactPage = import("@/client/pages/contact");
 
 // Importing multiple pages layouts
 // such as main layouts, product layout, etc...
@@ -35,7 +41,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: MainPage
+                lazy: () => MainPage
             }
         ],
     },
@@ -47,7 +53,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: BooksPage
+                lazy: () => BooksPage
             }
         ],
     },
@@ -59,7 +65,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: PapersPage
+                lazy: () => PapersPage
             }
         ],
     },
@@ -71,7 +77,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: AboutPage
+                lazy: () => AboutPage
             }
         ],
     },
@@ -83,7 +89,7 @@ const router = createBrowserRouter([
         children: [
             {
                 index: true,
-                Component: ContactPage
+                lazy: () => ContactPage
             }
         ],
     }

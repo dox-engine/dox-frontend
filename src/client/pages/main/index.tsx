@@ -9,7 +9,7 @@ import MainSearch from "@/client/pages/main/components/search";
 import { HomePageMetaData } from "@/client/core/constants/metadata";
 
 // Home page component
-function MainPage() {
+function Component() {
     return (
         <>
             <Helmet>
@@ -40,4 +40,4 @@ function MainPage() {
     );
 };
 
-export default MainPage;
+export { Component };
