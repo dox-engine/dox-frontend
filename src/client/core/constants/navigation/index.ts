@@ -21,6 +21,11 @@ const NavigationData: NavigationDataType = [
         title: "About Us",
         href: "/about"
     },
+    {
+        id: 5,
+        title: "Contact Us",
+        href: "/contact"
+    },
 ];
 
 export {

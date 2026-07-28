@@ -17,6 +17,8 @@ import { ThemeProvider } from "@/client/core/providers/theme-provider";
 // Tooltip provider for tooltip component
 import { TooltipProvider } from "@/client/components/ui/tooltip";
 
+import { Toaster } from "@/client/components/ui/sonner";
+
 // Router object which contains routes and layouts
 import { router } from "@/client/router/index";
 
@@ -30,6 +32,7 @@ createRoot(document.getElementById("root")!).render(
         <HelmetProvider>
             <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
                 <Suspense fallback={<Loading />}>
+                    <Toaster />
                     <TooltipProvider>
                         <RouterProvider router={router} />
                     </TooltipProvider>

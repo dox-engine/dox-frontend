@@ -16,7 +16,7 @@ function PapersFilter() {
     return (
         <div className="flex flex-col lg:flex-row justify-center items-center w-full gap-y-5 lg:gap-x-5">
             <div className="max-w-lg lg:max-w-2xl bg-card w-full py-3 px-4 flex flex-col border border-border justify-center rounded-[8px] items-center gap-y-4">
-                <ButtonGroup className="w-full">
+                <ButtonGroup className="w-full gap-x-3" orientation="normal">
                     <Input
                         placeholder="Search your book or paper..."
                         id="searchBar"

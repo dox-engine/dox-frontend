@@ -23,7 +23,7 @@ function BooksCard() {
                 className="relative z-20 aspect-video w-full object-cover brightness-60 grayscale dark:brightness-40"
                 onError={() => setImageFallback(IMAGE_FALLBACK)}
             />
-            <Badge variant="default" className="[&>svg]:size-5! absolute top-5 left-5 bg-background dark:bg-foreground text-foreground dark:text-background px-2 py-1 z-40">
+            <Badge variant="default" className="[&>svg]:size-4! absolute top-5 left-5 bg-background dark:bg-foreground text-foreground dark:text-background px-2 py-1 z-40 text-xs">
                 <BookIcon />
                 EBOOK
             </Badge>

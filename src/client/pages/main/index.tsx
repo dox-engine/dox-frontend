@@ -29,7 +29,7 @@ function MainPage() {
                     />
                     <TypingText
                         text="Access thousands of scientific books, research papers, and academic publications—all in one place."
-                        className="leading-7 text-center lg:text-base text-xs"
+                        className="leading-7 text-center lg:text-base text-xs text-muted-foreground"
                         delay={1500}
                         duration={20}
                     />

@@ -16,14 +16,14 @@ import { MagnifyingGlassIcon, CheckCircleIcon } from "@phosphor-icons/react";
 function MainSearch() {
     return (
         <div className="max-w-lg lg:max-w-2xl bg-card w-full py-3 px-4 flex flex-col justify-center rounded-[8px] items-center gap-y-4">
-            <ButtonGroup className="w-full">
+            <ButtonGroup className="w-full gap-x-3" orientation="normal">
                 <Input
                     placeholder="Search your book or paper..."
                     id="searchBar"
                     name="search_bar"
                 />
                 <Tooltip>
-                    <TooltipTrigger asChild>
+                    <TooltipTrigger>
                         <Button variant="outline" aria-label="Search">
                             <MagnifyingGlassIcon />
                         </Button>

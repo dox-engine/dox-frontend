@@ -7,6 +7,9 @@ import MainPage from "@/client/pages/main";
 import BooksPage from "@/client/pages/books";
 import PapersPage from "@/client/pages/papers";
 import AboutPage from "@/client/pages/about";
+import ContactPage from "@/client/pages/contact";
+
+import ForbiddenPage from "@/client/pages/error/forbidden";
 
 // PendingUi for fallBack Elements
 import Hydration from "@/client/components/Hydration";
@@ -69,6 +72,18 @@ const router = createBrowserRouter([
             {
                 index: true,
                 Component: AboutPage
+            }
+        ],
+    },
+    {
+        path: "contact",
+        HydrateFallback: Hydration,
+        ErrorBoundary: ErrorLayout,
+        lazy: () => MainLayout,
+        children: [
+            {
+                index: true,
+                Component: ContactPage
             }
         ],
     }

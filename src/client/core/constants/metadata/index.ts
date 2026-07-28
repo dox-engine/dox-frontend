@@ -45,6 +45,17 @@ const AboutPageMetaData: PageMetaData = {
     ],
 };
 
+// About us Page specific matadata
+const ContactPageMetaData: PageMetaData = {
+    title: PAGE_TITLES.CONTACT,
+    description: "Wellcome to the contact us page",
+    keywords: [
+        "books",
+        "papres",
+        "scientific"
+    ],
+};
+
 // Error pages metadata
 const NotFoundPageMetaData: PageMetaData = {
     title: PAGE_TITLES.NOT_FOUND,
@@ -81,6 +92,7 @@ export {
     BooksPageMetaData,
     PapersPageMetaData,
     AboutPageMetaData,
+    ContactPageMetaData,
     NotFoundPageMetaData,
     ForbiddenPageMetaData,
     InternalPageMetaData

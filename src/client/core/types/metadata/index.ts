@@ -5,10 +5,11 @@
 // Page titles are in enum form so it can be set
 // for each page and making each page title dynamic
 enum PAGE_TITLES {
-    HOME = "DOX-ENGINE | main page",
-    BOOKS = "DOX-ENGINE | books page",
-    PAPERS = "DOX-ENGINE | papers page",
-    ABOUT = "DOX-ENGINE | about us page",
+    HOME = "DOX-ENGINE | Main Page",
+    BOOKS = "DOX-ENGINE | Books Page",
+    PAPERS = "DOX-ENGINE | Papers Page",
+    ABOUT = "DOX-ENGINE | About Us Page",
+    CONTACT = "DOX-ENGINE | Contact Page",
     NOT_FOUND = "DOX-ENGINE | Not found !",
     FORBIDDEN = "DOX-ENGINE | Forbidden !",
     INTERNAL = "DOX-ENGINE | internal error !",

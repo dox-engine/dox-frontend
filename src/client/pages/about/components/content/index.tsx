@@ -1,5 +1,7 @@
 import { AvatarImage, Avatar, AvatarFallback } from "@/client/components/ui/avatar";
 import { Badge } from "@/client/components/ui/badge";
+import { Button } from "@/client/components/ui/button";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTrigger } from "@/client/components/ui/dialog";
 
 import AboutCard from "@/client/pages/about/components/About-Card";
 
@@ -11,6 +13,8 @@ import {
     UsersIcon,
     ShieldCheckIcon
 } from "@phosphor-icons/react";
+
+import DisclaimerDox from "@/client/pages/about/components/content/disclaimer";
 
 function AboutContent() {
     return (
@@ -93,6 +97,9 @@ function AboutContent() {
                             NestJs
                         </Badge>
                         <Badge variant="default" className="bg-background dark:bg-foreground text-foreground dark:text-background px-2 py-1">
+                            ExpressJs
+                        </Badge>
+                        <Badge variant="default" className="bg-background dark:bg-foreground text-foreground dark:text-background px-2 py-1">
                             Shadcn
                         </Badge>
                         <Badge variant="default" className="bg-background dark:bg-foreground text-foreground dark:text-background px-2 py-1">
@@ -144,9 +151,25 @@ function AboutContent() {
                         </h4>
                     </div>
                     <p className="leading-7 lg:text-sm text-xs text-start">
-                        DOX-ENGINE does not host any files on its servers. <br />
-                        We only index content available publicly across the internet. <br />
+                        DOX-ENGINE does not host any files on its servers.
+                        We only index content available publicly across the internet.
                         All materials belong to their respective owners.
+                        <Dialog>
+                            <DialogTrigger asChild>
+                                <Button variant="link">
+                                    Click here to see more
+                                </Button>
+                            </DialogTrigger>
+                            <DialogContent>
+                                <DialogHeader>
+                                    DOX-ENGINE LIBRARY
+                                </DialogHeader>
+                                <DialogDescription>
+                                    DOX-ENGINE Disclaimer Content
+                                </DialogDescription>
+                                <DisclaimerDox />
+                            </DialogContent>
+                        </Dialog>
                     </p>
                 </div>
             </AboutCard>

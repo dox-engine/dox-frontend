@@ -23,7 +23,7 @@ function PapersPage() {
                 <h1 className="scroll-m-20 text-center text-2xl sm:text-4xl lg:text-6xl font-extrabold tracking-tight text-balance max-w-lg lg:max-w-2xl mx-5 lg:mx-12">
                     Scientific Papers
                 </h1>
-                <p className="leading-7 text-center lg:text-base text-xs max-w-lg lg:max-w-2xl mx-5 lg:mx-12">
+                <p className="leading-7 text-center lg:text-base text-xs max-w-lg lg:max-w-2xl mx-5 lg:mx-12 text-muted-foreground">
                     Access thousends of scientific books, research papers, <br />
                     and academic publications-all in one place.
                 </p>

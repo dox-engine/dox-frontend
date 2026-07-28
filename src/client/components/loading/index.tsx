@@ -14,17 +14,6 @@ function Loading() {
                 >
                     DOX-ENGINE
                 </motion.h1>
-                <motion.div
-                    animate={{
-                        x: ["-150%", "150%"]
-                    }}
-                    transition={{
-                        repeat: Infinity,
-                        duration: 2,
-                        ease: "linear"
-                    }}
-                    className="mt-4 h-0.5 w-64 bg-white/80"
-                />
                 <div className="mt-6 flex gap-2">
                     {[0,1,2].map(i=>(
                         <motion.div
