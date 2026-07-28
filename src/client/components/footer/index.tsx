@@ -1,5 +1,3 @@
-import { Link } from "react-router";
-
 function Footer() {
     return (
         <footer className="absolute bottom-5 md:bottom-10 z-50">
@@ -9,9 +7,9 @@ function Footer() {
                 <small className="text-xs lg:text-sm text-muted-foreground leading-none font-medium">
                     Developed by
                 </small>
-                <Link to="/" className="text-xs lg:text-sm leading-none font-medium">
-                    Maziyar Isanezhad
-                </Link>
+                <a href="https://github.com/Red0x-Research-Center" target="_blank" className="text-xs lg:text-sm leading-none font-medium">
+                    RRC
+                </a>
             </div>
         </footer>
     );
