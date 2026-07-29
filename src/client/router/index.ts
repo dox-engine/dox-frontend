@@ -1,6 +1,6 @@
 // createBrowserRouter For managing routes and
 // Defining route informations
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, data } from "react-router";
 
 // Front Pages(Landing, books, etc...)
 // import MainPage from "@/client/pages/main";
@@ -38,6 +38,10 @@ const router = createBrowserRouter([
         HydrateFallback: Hydration,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
+        /* loader: async () => {
+            // return data from here
+            throw data("FALSE", { status: 200 });
+        }, */
         children: [
             {
                 index: true,

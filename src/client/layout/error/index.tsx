@@ -15,6 +15,7 @@ import { HexagonBackground } from "@/client/components/animate-ui/components/bac
 // This function or component is for customizing error ui
 function RootErrorLayout() {
     const routeError = useRouteError();
+    console.log(routeError);
     if (isRouteErrorResponse(routeError)) {
         if (routeError.status === 404) {
             return (
@@ -36,6 +37,7 @@ function RootErrorLayout() {
             <InternalPage />
         );
     };
+    return <InternalPage />
 };
 
 function ErrorLayout() {

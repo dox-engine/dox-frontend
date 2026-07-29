@@ -27,17 +27,33 @@ import "@/client/index.css";
 
 import Loading from "@/client/components/loading";
 
+import {
+    QueryClient,
+    QueryClientProvider
+} from "@tanstack/react-query";
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+
+const queryClient = new QueryClient()
+
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <HelmetProvider>
-            <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-                <Suspense fallback={<Loading />}>
-                    <Toaster />
-                    <TooltipProvider>
-                        <RouterProvider router={router} />
-                    </TooltipProvider>
-                </Suspense>
-            </ThemeProvider>
-        </HelmetProvider>
+        <QueryClientProvider client={queryClient}>
+            <HelmetProvider>
+                <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
+                    <Suspense fallback={<Loading />}>
+                        <Toaster />
+                        <TooltipProvider>
+                            <RouterProvider router={router} />
+                        </TooltipProvider>
+                        <ReactQueryDevtools
+                            initialIsOpen={false}
+                            buttonPosition="bottom-right"
+                            position="bottom"
+                            theme="dark"
+                        />
+                    </Suspense>
+                </ThemeProvider>
+            </HelmetProvider>
+        </QueryClientProvider>
     </StrictMode>,
 );
