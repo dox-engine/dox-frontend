@@ -8,5 +8,6 @@
         "paths": {
             "@/client/*": ["./src/client/*"],
         },
+        "types": ["vitest/globals"]
     }
 }

@@ -4,7 +4,7 @@
         "target": "es2023",
         "lib": ["ES2023", "DOM"],
         "module": "esnext",
-        "types": ["vite/client"],
+        "types": ["vite/client", "vitest/globals"],
         "skipLibCheck": true,
         "paths": {
             "@/client/*": ["./src/client/*"],
@@ -22,7 +22,7 @@
         "noUnusedLocals": true,
         "noUnusedParameters": true,
         "erasableSyntaxOnly": false,
-        "noFallthroughCasesInSwitch": true
+        "noFallthroughCasesInSwitch": true,
     },
     "include": ["src", "router.d.ts", "env.d.ts"]
 }
