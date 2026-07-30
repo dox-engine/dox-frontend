@@ -8,6 +8,7 @@ enum PAGE_TITLES {
     HOME = "DOX-ENGINE | Main Page",
     BOOKS = "DOX-ENGINE | Books Page",
     PAPERS = "DOX-ENGINE | Papers Page",
+    PAPERS_DETAIL = "DOX-ENGINE | Download Paper",
     ABOUT = "DOX-ENGINE | About Us Page",
     CONTACT = "DOX-ENGINE | Contact Page",
     NOT_FOUND = "DOX-ENGINE | Not found !",

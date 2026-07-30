@@ -1,0 +1,4 @@
+1- Make semantic html
+2- Add code comment and polish code base
+3- Dockerize the project
+4- Refactore the code after first version release

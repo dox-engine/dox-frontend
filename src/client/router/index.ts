@@ -17,6 +17,8 @@ import Hydration from "@/client/components/Hydration";
 const MainPage = import("@/client/pages/main");
 const BooksPage = import("@/client/pages/books");
 const PapersPage = import("@/client/pages/papers");
+const PaperDetailPage = import("@/client/pages/paper-detail");
+
 const AboutPage = import("@/client/pages/about");
 const ContactPage = import("@/client/pages/contact");
 
@@ -70,6 +72,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 lazy: () => PapersPage
+            },
+            {
+                path: ":paperId",
+                lazy: () => PaperDetailPage
             }
         ],
     },
