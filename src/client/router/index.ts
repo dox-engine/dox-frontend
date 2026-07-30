@@ -15,7 +15,10 @@ import { createBrowserRouter, data } from "react-router";
 import Hydration from "@/client/components/Hydration";
 
 const MainPage = import("@/client/pages/main");
+
 const BooksPage = import("@/client/pages/books");
+const BookDetailPage = import("@/client/pages/book-detail");
+
 const PapersPage = import("@/client/pages/papers");
 const PaperDetailPage = import("@/client/pages/paper-detail");
 
@@ -60,6 +63,10 @@ const router = createBrowserRouter([
             {
                 index: true,
                 lazy: () => BooksPage
+            },
+            {
+                path: ":bookId",
+                lazy: () => BookDetailPage
             }
         ],
     },

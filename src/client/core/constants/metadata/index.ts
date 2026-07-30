@@ -23,6 +23,16 @@ const BooksPageMetaData: PageMetaData = {
     ],
 };
 
+const BookDetailPageMetaData: PageMetaData = {
+    title: PAGE_TITLES.BOOKS_DETAIL,
+    description: "Download your book or read it online in this page",
+    keywords: [
+        "books",
+        "papres",
+        "scientific"
+    ],
+};
+
 // Papers Page specific matadata
 const PapersPageMetaData: PageMetaData = {
     title: PAGE_TITLES.PAPERS,
@@ -100,6 +110,7 @@ const InternalPageMetaData: PageMetaData = {
 export {
     HomePageMetaData,
     BooksPageMetaData,
+    BookDetailPageMetaData,
     PapersPageMetaData,
     PaperDetailPageMetaData,
     AboutPageMetaData,

@@ -1,11 +1,11 @@
 import { Badge } from "@/client/components/ui/badge";
 
-import InfoCard from "@/client/pages/paper-detail/components/paper-info/info-card"
-import InfoTable from "@/client/pages/paper-detail/components/paper-info/info-table";
+import InfoCard from "@/client/pages/book-detail/components/book-info/info-card"
+import InfoTable from "@/client/pages/book-detail/components/book-info/info-table";
 
 import { DownloadIcon, EyeIcon } from "@phosphor-icons/react";
 
-function PaperInfo() {
+function BookInfo() {
     return (
         <div className="flex flex-col justify-start items-start gap-6">
             <Badge>
@@ -39,4 +39,4 @@ function PaperInfo() {
     );
 };
 
-export default PaperInfo;
+export default BookInfo;
