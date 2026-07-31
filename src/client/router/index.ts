@@ -1,6 +1,8 @@
 // createBrowserRouter For managing routes and
 // Defining route informations
-import { createBrowserRouter, data } from "react-router";
+import { createBrowserRouter } from "react-router";
+
+import { AxiosClient } from "@/client/core/api/services";
 
 // Front Pages(Landing, books, etc...)
 // import MainPage from "@/client/pages/main";
@@ -12,7 +14,8 @@ import { createBrowserRouter, data } from "react-router";
 // import ForbiddenPage from "@/client/pages/error/forbidden";
 
 // PendingUi for fallBack Elements
-import Hydration from "@/client/components/Hydration";
+// import Hydration from "@/client/components/Hydration";
+import Loading from "@/client/components/loading";
 
 const MainPage = import("@/client/pages/main");
 
@@ -40,7 +43,7 @@ const MainLayout = import("@/client/layout/main");
 const router = createBrowserRouter([
     {
         path: "/",
-        HydrateFallback: Hydration,
+        HydrateFallback: Loading,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
         /* loader: async () => {
@@ -56,7 +59,7 @@ const router = createBrowserRouter([
     },
     {
         path: "books",
-        HydrateFallback: Hydration,
+        HydrateFallback: Loading,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
         children: [
@@ -72,7 +75,7 @@ const router = createBrowserRouter([
     },
     {
         path: "papers",
-        HydrateFallback: Hydration,
+        HydrateFallback: Loading,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
         children: [
@@ -88,19 +91,23 @@ const router = createBrowserRouter([
     },
     {
         path: "about",
-        HydrateFallback: Hydration,
+        HydrateFallback: Loading,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
         children: [
             {
                 index: true,
-                lazy: () => AboutPage
+                lazy: () => AboutPage,
+                loader: async () => {
+                    const getVersion = await AxiosClient.get("/api/v1/version");
+                    return getVersion.data as string;
+                },
             }
         ],
     },
     {
         path: "contact",
-        HydrateFallback: Hydration,
+        HydrateFallback: Loading,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
         children: [

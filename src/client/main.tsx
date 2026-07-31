@@ -25,7 +25,7 @@ import { router } from "@/client/router/index";
 // Styles are in this file
 import "@/client/index.css";
 
-import Loading from "@/client/components/loading";
+//import Loading from "@/client/components/loading";
 
 import {
     QueryClient,
@@ -37,10 +37,10 @@ const queryClient = new QueryClient()
 
 createRoot(document.getElementById("root")!).render(
     <StrictMode>
-        <QueryClientProvider client={queryClient}>
-            <HelmetProvider>
-                <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
-                    <Suspense fallback={<Loading />}>
+        <Suspense fallback={null}>
+            <QueryClientProvider client={queryClient}>
+                <HelmetProvider>
+                    <ThemeProvider defaultTheme="system" storageKey="vite-ui-theme">
                         <Toaster />
                         <TooltipProvider>
                             <RouterProvider router={router} />
@@ -51,9 +51,9 @@ createRoot(document.getElementById("root")!).render(
                             position="bottom"
                             theme="dark"
                         />
-                    </Suspense>
-                </ThemeProvider>
-            </HelmetProvider>
-        </QueryClientProvider>
+                    </ThemeProvider>
+                </HelmetProvider>
+            </QueryClientProvider>
+        </Suspense>
     </StrictMode>,
 );
