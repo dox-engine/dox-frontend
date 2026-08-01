@@ -1,7 +1,7 @@
 import * as React from "react"
 import { cva, type VariantProps } from "class-variance-authority"
 
-import { cn } from "@/client/lib/utils"
+import { cn } from "@/client/core/lib/utils"
 import { Button } from "@/client/components/ui/button"
 import { Input } from "@/client/components/ui/input"
 import { Textarea } from "@/client/components/ui/textarea"

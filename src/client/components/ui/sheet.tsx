@@ -3,7 +3,7 @@
 import * as React from "react"
 import { Dialog as SheetPrimitive } from "radix-ui"
 
-import { cn } from "@/client/lib/utils"
+import { cn } from "@/client/core/lib/utils"
 import { Button } from "@/client/components/ui/button"
 import { XIcon } from "@phosphor-icons/react"
 

@@ -1,8 +1,12 @@
 import express from "express";
+import type { Request, Response } from "express";
 import ViteExpress from "vite-express";
+
 import dotenv from "@dotenvx/dotenvx";
+
 import SwaggerUi from "swagger-ui-express";
 import SwaggerJsDoc from "swagger-jsdoc";
+
 import { dirname } from "path";
 import { fileURLToPath } from "url";
 
@@ -26,17 +30,9 @@ const env_mode: ViteMode = (process.env.NODE_ENV || "development") as ViteMode
 
 const server = app.listen(port, host);
 
-app.use(async (req, res, next) => {
-    const baseApiDocUrl = "/api-doc";
-    const isApiDocRoute = req.originalUrl.search(baseApiDocUrl)
-    if (env_mode === "production") {
-        return res.sendStatus(404);
-    };
-    next();
-});
-
-app.use("/api-doc", SwaggerUi.serve, SwaggerUi.setup(SwaggerJsDoc({
+const SwaggerSpec = SwaggerJsDoc({
     swaggerDefinition: {
+        openapi: '3.2.0',
         info: {
             title: "DOX-ENGINE API(FRONT-END)",
             description: "A Shadow library. This part of api contains Api frontend such as site setting, etc...",
@@ -45,10 +41,27 @@ app.use("/api-doc", SwaggerUi.serve, SwaggerUi.setup(SwaggerJsDoc({
                 name: "MIT",
                 url: "https://google.com",
             },
+            
         },
     },
     apis: [`${__dirname}/main.ts`], // files containing annotations as above
-})))
+})
+
+app.use(async (req, res, next) => {
+    const baseApiDocUrl = "/api-doc";
+    const isApiDocRoute = req.originalUrl.search(baseApiDocUrl);
+    if (env_mode === "production" && (isApiDocRoute !== -1 || req.originalUrl === "/api-openapi/openapi.json")) {
+        return res.sendStatus(404);
+    };
+    next();
+});
+
+app.use("/api-doc", SwaggerUi.serve, SwaggerUi.setup(SwaggerSpec))
+
+app.get("/api-openapi/openapi.json", (_, res) => {
+    res.setHeader("Content-Type", "application/json");
+    res.send(SwaggerSpec);
+});
 
 app.use(async (_, __, next) => {
 
@@ -82,7 +95,7 @@ app.use(async (_, __, next) => {
  * @swagger
  * tags:
  *   name: Site
- *   description: Site Setting
+ *   description: Set or Get Site Setting
  */
 
 /**
@@ -132,7 +145,7 @@ app.use(async (_, __, next) => {
  *                   type: string
  *                   example: "Cache service unavailable"
  */
-app.get("/api/v1/version", (_, res) => {
+app.get("/api/v1/version", async (_, res) => {
     return res.send(cache.get(appVersionAPI));
 });
 
@@ -176,10 +189,86 @@ app.get("/api/v1/version", (_, res) => {
  *               error: "Failed to invalidate cache"
  *               details: "Cache service unavailable"
  */
-app.get("/api/v1/invalidate", (_, res) => {
+app.get("/api/v1/invalidate", async (_, res) => {
     cache.set(cacheControlPrefix, "true");
 
     return res.send("ok");
+});
+
+/**
+ * @swagger
+ * tags:
+ *   name: Pages
+ *   description: Set or Get Site Pages Setting
+ */
+
+/**
+ * @swagger
+ * /api/v1/pages/{pageString}:
+ *   get:
+ *     summary: Get page status
+ *     description: Retrieves the active status of a specific page by its string identifier
+ *     tags:
+ *       - Pages
+ *     parameters:
+ *       - in: path
+ *         name: pageString
+ *         required: true
+ *         schema:
+ *           type: string
+ *         description: The unique page identifier string
+ *         example: "homepage"
+ *         minLength: 1
+ *         maxLength: 255
+ *     responses:
+ *       200:
+ *         description: Page status retrieved successfully
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 isActive:
+ *                   type: boolean
+ *                   description: Indicates whether the page is currently active
+ *                   example: true
+ *             example:
+ *               isActive: true
+ *       400:
+ *         description: Invalid page identifier
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Invalid page identifier format"
+ *       404:
+ *         description: Page not found
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Page not found"
+ *       500:
+ *         description: Server error
+ *         content:
+ *           application/json:
+ *             schema:
+ *               type: object
+ *               properties:
+ *                 error:
+ *                   type: string
+ *                   example: "Internal server error"
+ */
+app.get("/api/v1/pages/:pageString", async (req: Request<{pageString: string}>, res: Response) => {
+    return res.send(JSON.stringify({
+        isActive: true
+    }));
 });
 
 ViteExpress.config({

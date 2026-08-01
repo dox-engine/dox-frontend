@@ -1,6 +1,6 @@
 // createBrowserRouter For managing routes and
 // Defining route informations
-import { createBrowserRouter } from "react-router";
+import { createBrowserRouter, data } from "react-router";
 
 import { AxiosClient } from "@/client/core/api/services";
 
@@ -47,8 +47,8 @@ const router = createBrowserRouter([
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
         /* loader: async () => {
-            // return data from here
-            throw data("FALSE", { status: 200 });
+            const getPageStatus = await AxiosClient.get("/api/v1/pages/main");
+            throw data("Forbidden", { status: 403 });
         }, */
         children: [
             {
