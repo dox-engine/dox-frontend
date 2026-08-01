@@ -1,8 +1,9 @@
 // createBrowserRouter For managing routes and
 // Defining route informations
-import { createBrowserRouter, data } from "react-router";
+import { createBrowserRouter, data as ReactRouterData } from "react-router";
 
 import { AxiosClient } from "@/client/core/api/services";
+import { AxiosHelper } from "@/client/core/api/helper/axios-helper";
 
 // Front Pages(Landing, books, etc...)
 // import MainPage from "@/client/pages/main";
@@ -46,10 +47,16 @@ const router = createBrowserRouter([
         HydrateFallback: Loading,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
-        /* loader: async () => {
-            const getPageStatus = await AxiosClient.get("/api/v1/pages/main");
-            throw data("Forbidden", { status: 403 });
-        }, */
+        loader: async () => {
+            // const getPageStatus = await AxiosClient.get("/api/v1/pages/main");
+            try {
+                const { status, data, response } = await AxiosHelper.get("/api/v1/pages/{pageString}");
+                console.log(status, data, response);
+            } catch (err) {
+                console.log(err)
+            };
+            //throw ReactRouterData("Forbidden", { status: 403 });
+        },
         children: [
             {
                 index: true,

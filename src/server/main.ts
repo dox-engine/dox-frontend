@@ -204,7 +204,7 @@ app.get("/api/v1/invalidate", async (_, res) => {
 
 /**
  * @swagger
- * /api/v1/pages/{pageString}:
+ * /api/v1/pages/:pageString:
  *   get:
  *     summary: Get page status
  *     description: Retrieves the active status of a specific page by its string identifier

@@ -17,7 +17,7 @@ import { Controller, useForm } from "react-hook-form";
 import * as z from "zod";
 
 import { toast } from "sonner";
-import { cn } from "@/client/lib/utils";
+import { cn } from "@/client/core/lib/utils";
 
 function MessageForm() {
     const form = useForm<z.infer<typeof messageFormSchema>>({
