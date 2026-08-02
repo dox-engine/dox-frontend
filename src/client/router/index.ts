@@ -1,6 +1,6 @@
 // createBrowserRouter For managing routes and
 // Defining route informations
-import { createBrowserRouter, data as ReactRouterData } from "react-router";
+import { createBrowserRouter, isRouteErrorResponse, data as ReactRouterData } from "react-router";
 
 import { AxiosClient } from "@/client/core/api/services";
 import { AxiosHelper } from "@/client/core/api/helper/axios-helper";
@@ -48,14 +48,14 @@ const router = createBrowserRouter([
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
         loader: async () => {
-            // const getPageStatus = await AxiosClient.get("/api/v1/pages/main");
-            try {
-                const { status, data, response } = await AxiosHelper.get("/api/v1/pages/{pageString}");
-                console.log(status, data, response);
-            } catch (err) {
-                console.log(err)
+            const { data } = await AxiosHelper.get("/api/v1/pages/{pageString}", {
+                params: {
+                    pageString: "main"
+                },
+            });
+            if (data.isActive !== true) {
+                throw ReactRouterData("Forbidden", { status: 403 });
             };
-            //throw ReactRouterData("Forbidden", { status: 403 });
         },
         children: [
             {
@@ -69,6 +69,16 @@ const router = createBrowserRouter([
         HydrateFallback: Loading,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
+        loader: async () => {
+            const { data } = await AxiosHelper.get("/api/v1/pages/{pageString}", {
+                params: {
+                    pageString: "books"
+                },
+            });
+            if (data.isActive !== true) {
+                throw ReactRouterData("Forbidden", { status: 403 });
+            };
+        },
         children: [
             {
                 index: true,
@@ -76,7 +86,17 @@ const router = createBrowserRouter([
             },
             {
                 path: ":bookId",
-                lazy: () => BookDetailPage
+                lazy: () => BookDetailPage,
+                loader: async () => {
+                    const { data } = await AxiosHelper.get("/api/v1/pages/{pageString}", {
+                        params: {
+                            pageString: "bookDetail"
+                        },
+                    });
+                    if (data.isActive !== true) {
+                        throw ReactRouterData("Forbidden", { status: 403 });
+                    };
+                },
             }
         ],
     },
@@ -85,6 +105,16 @@ const router = createBrowserRouter([
         HydrateFallback: Loading,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
+        loader: async () => {
+            const { data } = await AxiosHelper.get("/api/v1/pages/{pageString}", {
+                params: {
+                    pageString: "papers"
+                },
+            });
+            if (data.isActive !== true) {
+                throw ReactRouterData("Forbidden", { status: 403 });
+            };
+        },
         children: [
             {
                 index: true,
@@ -92,7 +122,17 @@ const router = createBrowserRouter([
             },
             {
                 path: ":paperId",
-                lazy: () => PaperDetailPage
+                lazy: () => PaperDetailPage,
+                loader: async () => {
+                    const { data } = await AxiosHelper.get("/api/v1/pages/{pageString}", {
+                        params: {
+                            pageString: "paperDetail"
+                        },
+                    });
+                    if (data.isActive !== true) {
+                        throw ReactRouterData("Forbidden", { status: 403 });
+                    };
+                },
             }
         ],
     },
@@ -101,6 +141,16 @@ const router = createBrowserRouter([
         HydrateFallback: Loading,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
+        loader: async () => {
+            const { data } = await AxiosHelper.get("/api/v1/pages/{pageString}", {
+                params: {
+                    pageString: "about"
+                },
+            });
+            if (data.isActive !== true) {
+                throw ReactRouterData("Forbidden", { status: 403 });
+            };
+        },
         children: [
             {
                 index: true,
@@ -117,6 +167,16 @@ const router = createBrowserRouter([
         HydrateFallback: Loading,
         ErrorBoundary: ErrorLayout,
         lazy: () => MainLayout,
+        loader: async () => {
+            const { data } = await AxiosHelper.get("/api/v1/pages/{pageString}", {
+                params: {
+                    pageString: "contact"
+                },
+            });
+            if (data.isActive !== true) {
+                throw ReactRouterData("Forbidden", { status: 403 });
+            };
+        },
         children: [
             {
                 index: true,

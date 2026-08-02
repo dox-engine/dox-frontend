@@ -16,6 +16,12 @@ type ViteMode = "development" | "production" | undefined;
 
 const cache = new Map<string, string>();
 
+enum PageStatusEnum {
+    PAGE_STATUS = "PAGE_STATUS",
+};
+
+const pageStatusCache = new Map<PageStatusEnum, string>();
+
 const cacheControlPrefix = "invalidated";
 const appVersionAPI = "app_version";
 
@@ -27,6 +33,16 @@ const app = express();
 const port = (process.env.PORT || 3000) as number;
 const host = (process.env.HOST || "localhost") as string;
 const env_mode: ViteMode = (process.env.NODE_ENV || "development") as ViteMode
+
+const routes: string[] = [
+    "main",
+    "books",
+    "bookDetail",
+    "papers",
+    "paperDetail",
+    "about",
+    "contact"
+];
 
 const server = app.listen(port, host);
 
@@ -45,7 +61,7 @@ const SwaggerSpec = SwaggerJsDoc({
         },
     },
     apis: [`${__dirname}/main.ts`], // files containing annotations as above
-})
+});
 
 app.use(async (req, res, next) => {
     const baseApiDocUrl = "/api-doc";
@@ -204,7 +220,7 @@ app.get("/api/v1/invalidate", async (_, res) => {
 
 /**
  * @swagger
- * /api/v1/pages/:pageString:
+ * /api/v1/pages/{pageString}:
  *   get:
  *     summary: Get page status
  *     description: Retrieves the active status of a specific page by its string identifier
@@ -266,9 +282,14 @@ app.get("/api/v1/invalidate", async (_, res) => {
  *                   example: "Internal server error"
  */
 app.get("/api/v1/pages/:pageString", async (req: Request<{pageString: string}>, res: Response) => {
-    return res.send(JSON.stringify({
-        isActive: true
-    }));
+    const { pageString } = req.params;
+    if (routes.includes(pageString)) {
+        if (routes.)
+        return res.send(JSON.stringify({
+            isActive: false
+        }));
+    };
+    return res.sendStatus(404);
 });
 
 ViteExpress.config({

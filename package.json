@@ -10,7 +10,7 @@
         "knip": "knip",
         "test:run": "vitest run",
         "test:watch": "vitest watch",
-        "generate-schema:front": "openapi-typescript http://localhost:3000/api-openapi/openapi.json --make-path-enum --output ./src/client/core/api/front-api.d.ts"
+        "generate-schema:front": "openapi-typescript http://localhost:3000/api-openapi/openapi.json --make-path-enum --output ./src/client/core/api/types/front-api.d.ts"
     },
     "dependencies": {
         "@fontsource-variable/geist": "^5.3.0",
